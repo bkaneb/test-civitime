@@ -1,0 +1,1 @@
+les images qui étaient contenues dans l'asset sont dans le dossier public
