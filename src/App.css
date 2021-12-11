@@ -161,7 +161,7 @@ main {
   height: auto;
 }
 
-.selected::after {
+.selected-color::after {
   content: "";
   position: absolute;
   left: 0.1875rem;
