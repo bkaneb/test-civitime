@@ -30,6 +30,10 @@ main {
   border-radius: 0.1875rem 0.1875rem 0 0;
 }
 
+.app-link {
+    text-decoration : none;
+}
+
 .app-title {
   font-weight: 37.5rem;
   margin: auto;

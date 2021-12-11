@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Window from "./components/Window";
+import Routers from "./routes";
 import WindowTitle from "./components/WindowTitle";
 
 const App = () => {
@@ -8,7 +8,7 @@ const App = () => {
     <main>
       <div id="profil-editor">
         <WindowTitle />
-        <Window />
+        <Routers />
       </div>
     </main>
   );

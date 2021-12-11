@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import PageAffichageContext from "../contexts/PageAffichageContext";
 import AvatarContext from "../contexts/AvatarContext";
-import ErrorTshirt from "./ErrorTshirt";
-import { ShirtColors, SkinColors, HairColors } from "./Colors";
-import ViewColor from "./ViewColor";
-import Avatar from "./Avatar";
-import WindowResponses from "./WindowResponses";
+import ErrorTshirt from "../components/ErrorTshirt";
+import { ShirtColors, SkinColors, HairColors } from "../components/Colors";
+import ViewColor from "../components/ViewColor";
+import Avatar from "../components/Avatar";
 
 const Window = () => {
   const {
@@ -17,12 +17,13 @@ const Window = () => {
     currentSkinMan,
     currentSkinWoman,
   } = useContext(AvatarContext);
-  const { pageResponse, validateChoice, messageErrorWoman, setMessageErrorWoman }=
-    useContext(PageAffichageContext);
+  const {
+    messageErrorWoman,
+    setMessageErrorWoman,
+  } = useContext(PageAffichageContext);
 
   return (
     <div className="app-body">
-      {!pageResponse ? (
         <div className="app-body-box">
           <h2 className="app-body-title">
             Lequel de ces deux avatars préférez-vous ?
@@ -155,20 +156,18 @@ const Window = () => {
             </div>
           </div>
           {messageErrorWoman ? <ErrorTshirt /> : null}
-          <div
-            className="app-btn"
-            onClick={(e) => {
-              validateChoice(e);
-              setMessageErrorWoman(false);
-            }}
-          >
-            <span>Valider</span>
-          </div>
-          <div style={{height:'1.25rem'}}/>
+          <Link to="/responses" className="app-link">
+            <div
+              className="app-btn"
+              onClick={(e) => {
+                setMessageErrorWoman(false);
+              }}
+            >
+              <span>Valider</span>
+            </div>
+          </Link>
+          <div style={{ height: "1.25rem" }} />
         </div>
-      ) : (
-        <WindowResponses />
-      )}
     </div>
   );
 };

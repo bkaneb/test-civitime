@@ -9,7 +9,7 @@ const ResponsesMan = () => {
   return (
     <div>
       <span>
-        Votre choix :
+        Votre choix : &ensp;
         {currentAvatar === 0 ? <Avatar paramID={0} /> : <Avatar paramID={1} />}
       </span>{" "}
       <br />
